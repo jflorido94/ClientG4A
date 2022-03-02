@@ -1,0 +1,75 @@
+// Azul oscuro y colores apagados
+// $white:        #ffffff;
+// $light:        #e1e0e3;
+// $dark:         #0a0033;
+// $primary:      #2d02ee;
+// $secondary:    #6838b7;
+// $info:         #df6ed2;
+// $accent1:      #50146a;
+// $accent2:      #594aad;
+// $accent3:      #b5a7cf;
+// $success:      #019d5c;
+// $warning:      #dfca01;
+// $danger:       #ed1e00;
+
+
+// Azul purpura oscuro con llamativos
+// $white:        #ffffff;
+// $light:        #e1e0e5;
+// $dark:         #0f1935;
+// $primary:      #8707ea;
+// $secondary:    #d726f2;
+// $info:         #f171f5;
+// $accent1:      #1d81fd;
+// $accent2:      #ec6a09;
+// $accent3:      #ffad51;
+// $success:      #00b86f;
+// $warning:      #e5d100;
+// $danger:       #f62800;
+
+
+// Azules claros
+// $white:        #ffffff;
+// $light:        #d3f9ff;
+// $dark:         #476293;
+// $primary:      #806cdc;
+// $secondary:    #3193ca;
+// $info:         #acefff;
+// $accent1:      #61009f;
+// $accent2:      #416ef2;
+// $accent3:      #b171eb;
+// $success:      #00b36a;
+// $warning:      #e5d000;
+// $danger:       #f62300;
+
+
+
+//purple & dark blue
+$white:         #ffffff;
+$light:         #d1e4f2;
+$dark:          #1e1155;
+$primary:       #9e15fb;
+$secondary:     #a764ea;
+$info:          #e8a7fa;
+$accent1:       #5a00aa;
+$accent2:       #504bc3;
+$accent3:       #39b9ca;
+$success:       #00ac68;
+$warning:       #e1ce00;
+$danger:        #f12800;
+
+
+
+$theme-colors: (
+  "light":        $light,
+  "dark":         $dark,
+  "primary":      $primary,
+  "secondary":    $secondary,
+  "info":         $info,
+  "accent1":      $accent1,
+  "accent2":      $accent2,
+  "accent3":      $accent3,
+  "success":      $success,
+  "warning":      $warning,
+  "danger":       $danger,
+);

@@ -1,0 +1,50 @@
+<div class="container">
+
+  <app-card-form title="Login">
+
+    <form [formGroup]="inicio" (ngSubmit)="login(inicio.value)">
+      <!-- Cambiar login parametros ??-->
+
+      <!-- Email -->
+      <div class="form-group mb-3">
+        <label>Email</label>
+        <input class="form-control text-center" placeholder="email@g4a.com" type="email" formControlName="email"
+          [ngClass]="{ 'is-invalid': form['email'].errors&&form['email'].dirty}">
+        <div *ngIf="form['email'].errors" class="invalid-feedback">
+          <div *ngIf="form['email'].errors['required']">email requerido</div>
+          <div *ngIf="form['email'].errors['email']">email no valido</div>
+        </div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="form-group mb-3">
+        <a class="float-end link-info" href="#">Recordar</a>
+        <label>Contraseña</label>
+        <input class="form-control text-center" placeholder="******" type="password" formControlName="password"
+          [ngClass]="{ 'is-invalid': form['password'].errors&&form['password'].dirty}">
+        <div *ngIf="form['password'].errors" class="invalid-feedback">
+          <div *ngIf="form['password'].errors['required']">Contraseña requerida</div>
+          <div *ngIf="form['password'].errors['minlength']">La contraseña es de minimo
+            {{form['password'].errors['minlength'].requiredLength}} caracteres</div>
+        </div>
+      </div>
+
+      <!-- Mantener iniciado -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" formControlName="recordar">
+        <label class="form-check-label">Mantener iniciado</label>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group d-grid gap-2">
+        <button type="submit" [disabled]="inicio.invalid" class="btn btn-primary btn-block"> Entrar </button>
+      </div>
+    </form>
+    <hr>
+    <!-- Footer -->
+    <div class="card-footer text-center px-5 py-3">
+      ¿No tienes una cuenta? <a class="link-info" [routerLink]="['/register']">Registrate</a>
+    </div>
+
+  </app-card-form>
+</div>

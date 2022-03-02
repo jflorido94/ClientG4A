@@ -1,0 +1,116 @@
+<!-- <div class="container-fluid p-3 bg-light "> -->
+  <!-- <ngx-spinner bdColor="rgba(30,17,85,0.8)" size="default" color="#d1e4f2" type="pacman" [fullScreen]="true">
+    <p style="color: #d1e4f2"> Cargando... </p>
+  </ngx-spinner> -->
+
+  <section class="section-pagetop">
+    <div class="container">
+      <h2 class="title-page">Mi perfil</h2>
+    </div> <!-- container //  -->
+  </section>
+  <!-- <div class="container"> -->
+
+    <div class="container row">
+      <aside class="col-md-3">
+        <ul class="list-group">
+          <a class="list-group-item active" href="#"> Account overview </a>
+          <a class="list-group-item" href="#"> My Orders </a>
+          <a class="list-group-item" href="#"> My wishlist </a>
+          <a class="list-group-item" href="#"> Return and refunds </a>
+          <a class="list-group-item" href="#">Settings </a>
+          <a class="list-group-item" href="#"> My Selling Items </a>
+          <a class="list-group-item" href="#"> Received orders </a>
+        </ul>
+      </aside> <!-- col.// -->
+      <main class="col-md-9">
+
+        <div class="card mb-3">
+          <div class="card-body">
+
+            <figure class="icontext">
+              <div class="icon">
+                <img class="rounded-circle img-sm border" src="{{item?.avatar}}">
+              </div>
+              <div class="text">
+                <strong> {{item?.nick}} </strong> <br>
+              </div>
+            </figure>
+            <a class="btn btn-info my-2 float-end" href="#">Editar</a>
+            <hr>
+            <dl class="row my-4 py-2">
+              <dt class="col-sm-3 ">Nombre: </dt>
+              <dd class="col-sm-9">{{item?.name}} {{item?.surnames}}</dd>
+
+              <dt class="col-sm-3 ">Email: </dt>
+              <dd class="col-sm-9">{{item?.email}}</dd>
+
+              <dt class="col-sm-3 ">DNI: </dt>
+              <dd class="col-sm-9">{{item?.dni}}</dd>
+
+              <dt class="col-sm-3 ">Saldo: </dt>
+              <dd class="col-sm-9">{{item?.wallet.amount}} €</dd>
+            </dl>
+
+            <div class="card-group">
+              <figure class="card bg">
+                <div class="p-3">
+                  <h5 class="card-title">38</h5>
+                  <span>Productos</span>
+                </div>
+              </figure>
+              <figure class="card bg">
+                <div class="p-3">
+                  <h5 class="card-title">5</h5>
+                  <span>Votos</span>
+                </div>
+              </figure>
+              <figure class="card bg">
+                <div class="p-3">
+                  <h5 class="card-title">12</h5>
+                  <span>Compras</span>
+                </div>
+              </figure>
+              <figure class="card bg">
+                <div class="p-3">
+                  <h5 class="card-title">50</h5>
+                  <span>Ventas</span>
+                </div>
+              </figure>
+            </div>
+
+
+          </div> <!-- card-body .// -->
+        </div> <!-- card.// -->
+
+        <div class="card  mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Mis últimos productos </h5>
+
+            <div class="row">
+
+              <div *ngFor="let prod of item.products.data" class="col-md-6">
+                <figure class="itemside  mb-3">
+                  <div class="aside"><img src="images/items/1.jpg" class="border img-sm"></div>
+                  <figcaption class="info">
+                    <time class="text-muted"><i class="fa fa-calendar-alt"></i> {{prod.created_at| date: 'dd-MM-yyyy'}}</time>
+                    <p class="py-1">{{prod.title}}</p>
+                    <span class="badge bg-accent3" title="{{prod.condition['info']}}">{{prod.condition['title']}}</span>
+                  </figcaption>
+                </figure>
+              </div> <!-- col.// -->
+
+            </div> <!-- row.// -->
+
+            <a href="#" class="btn btn-outline-primary"> See all orders </a>
+          </div> <!-- card-body .// -->
+        </div> <!-- card.// -->
+
+
+        <!-- <app-reviews-list></app-reviews-list> -->
+
+      </main> <!-- col.// -->
+    </div>
+
+  <!-- </div> container .//  -->
+<!-- </div> -->
+

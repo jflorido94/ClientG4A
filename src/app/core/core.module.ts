@@ -1,27 +1,38 @@
-import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ApiService } from './services/api.service';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { NgModule} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { NgxSpinnerModule } from 'ngx-spinner';
+
+import { HeaderComponent } from './header/header.component';
+import { ShellComponent } from './shell/shell.component';
+import { FooterComponent } from './footer/footer.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
-    HttpClient
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true,
+    }),                      // ToastrModule added
+    NgxSpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    ApiService
   ]
 })
 export class CoreModule {
 
-  constructor (@Optional() @SkipSelf() parentModule?: CoreModule) {
-    if (parentModule) {
-      throw new Error(
-        'CoreModule is already loaded. Import it in the AppModule only.');
-    }
-  }
 
 }

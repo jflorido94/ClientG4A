@@ -1,0 +1,127 @@
+<div class="container ">
+
+  <!-- Card -->
+  <!-- <div class="card col-auto p-0 rounded-3 bg-dark text-white"> -->
+
+  <!-- <ngx-spinner bdColor="rgba(30,17,85,0.8)" size="default" color="#d1e4f2" type="pacman" [fullScreen]="false">
+      <p style="color: #d1e4f2"> Cargando... </p>
+    </ngx-spinner> -->
+
+  <!-- Body -->
+  <!-- <div class="card-body p-3 ">
+      <h4 class="card-title text-center mb-4">Registrar</h4> -->
+  <app-card-form title="Registro" class="row" >
+
+
+    <form [formGroup]="registro" (ngSubmit)="register(registro.value)">
+      <!-- Cambiar login parametros ??-->
+
+      <div class="row">
+        <!-- Name -->
+        <div class="col-6 form-group mb-3">
+          <label>Nombre</label>
+          <input class="form-control text-center" placeholder="Nombre" type="text" formControlName="name"
+            [ngClass]="{ 'is-invalid': form['name'].errors&&form['name'].dirty}">
+          <div *ngIf="form['name'].errors" class="invalid-feedback">
+            <div *ngIf="form['name'].errors['required']">Nombre requerido</div>
+            <div *ngIf="form['name'].errors['name']">Nombre no valido</div>
+          </div>
+        </div>
+
+        <!-- Surname -->
+        <div class="col-6 form-group mb-3">
+          <label>Apellidos</label>
+          <input class="form-control text-center" placeholder="Apellidos" type="text" formControlName="surnames"
+            [ngClass]="{ 'is-invalid': form['surnames'].errors&&form['surnames'].dirty}">
+          <div *ngIf="form['surnames'].errors" class="invalid-feedback">
+            <div *ngIf="form['surnames'].errors['required']">Apellidos requerido</div>
+            <div *ngIf="form['surnames'].errors['surnames']">Apellidos no valido</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <!-- Nick -->
+        <div class="col-6 form-group mb-3">
+          <label>Nick</label>
+          <input class="form-control text-center" placeholder="Nick" type="text" formControlName="nick"
+            [ngClass]="{ 'is-invalid': form['nick'].errors&&form['nick'].dirty}">
+          <div *ngIf="form['nick'].errors" class="invalid-feedback">
+            <div *ngIf="form['nick'].errors['required']">Nick requerido</div>
+            <div *ngIf="form['nick'].errors['minlength']">El nick es de minimo
+              {{form['nick'].errors['minlength'].requiredLength}} caracteres</div>
+          </div>
+        </div>
+
+        <!-- DNI -->
+        <div class="col-6 form-group mb-3">
+          <label>DNI</label>
+          <input class="form-control text-center" placeholder="12345678-A" type="text" formControlName="dni"
+            [ngClass]="{ 'is-invalid': form['dni'].errors&&form['dni'].dirty}">
+          <div *ngIf="form['dni'].errors" class="invalid-feedback">
+            <div *ngIf="form['dni'].errors['required']">DNI requerido</div>
+            <div *ngIf="form['dni'].errors['dni']">DNI no valido</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group mb-3">
+        <label>Email</label>
+        <input class="form-control text-center" placeholder="email@g4a.com" type="email" formControlName="email"
+          [ngClass]="{ 'is-invalid': form['email'].errors&&form['email'].dirty}">
+        <div *ngIf="form['email'].errors" class="invalid-feedback">
+          <div *ngIf="form['email'].errors['required']">email requerido</div>
+          <div *ngIf="form['email'].errors['email']">email no valido</div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Contraseña -->
+        <div class="col-6 form-group mb-3">
+          <label>Contraseña</label>
+          <input class="form-control text-center" placeholder="******" type="password" formControlName="password"
+            [ngClass]="{ 'is-invalid': form['password'].errors&&form['password'].dirty}">
+          <div *ngIf="form['password'].errors" class="invalid-feedback">
+            <div *ngIf="form['password'].errors['required']">Contraseña requerida</div>
+            <div *ngIf="form['password'].errors['minlength']">La contraseña es de minimo
+              {{form['password'].errors['minlength'].requiredLength}} caracteres</div>
+          </div>
+        </div>
+
+        <!-- Confirmar contraseña -->
+        <div class="col-6 form-group mb-3">
+          <label>Confirmar Contraseña</label>
+          <input class="form-control text-center" placeholder="******" type="password"
+            formControlName="password_confirmation"
+            [ngClass]="{ 'is-invalid': form['password_confirmation'].errors&&form['password_confirmation'].dirty}">
+          <div *ngIf="form['password_confirmation'].errors" class="invalid-feedback">
+            <div *ngIf="form['password_confirmation'].errors['required']">Contraseña requerida</div>
+            <div *ngIf="form['password_confirmation'].errors['minlength']">La contraseña es de minimo
+              {{form['password_confirmation'].errors['minlength'].requiredLength}} caracteres</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mantener iniciado -->
+      <div class="form-check my-3 mb-3">
+        <input class="form-check-input" type="checkbox" formControlName="accept">
+        <label class="form-check-label">Acepto terminos y condiciones de uso</label>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group d-grid gap-2">
+        <button type="submit" [disabled]="registro.invalid" class="btn btn-primary btn-block"> Entrar </button>
+      </div>
+    </form>
+    <!-- </div> -->
+    <hr>
+    <!-- Footer -->
+    <div class="card-footer text-center px-5 py-3">
+      ¿Tienes una cuenta? <a class="link-info" [routerLink]="['/login']">Inicia sesión</a>
+    </div>
+  <!-- </div>  -->
+  </app-card-form>
+</div>

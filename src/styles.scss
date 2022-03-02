@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/variable.scss";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+//centrar en pantalla
+.div-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+article{
+  min-height: 85vh;
+}
+
+header{
+  min-height: 5vh;
+}
+
+footer{
+  min-height: 10vh;
+}

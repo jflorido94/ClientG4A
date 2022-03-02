@@ -1,0 +1,83 @@
+<header>
+  <!-- Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid justify-content-between">
+      <!-- Left elements -->
+
+      <div class="d-flex">
+        <!-- Brand -->
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center">
+          <img src="assets/img/logo1.png" height="40" />
+        </a>
+      </div>
+
+      <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
+        <li class="nav-item mr-3">
+          <a class="nav-link" [routerLink]="['/products']">Productos</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+        </li>
+        <!-- <li class="nav-item mr-3">
+          <a class="nav-link" href="/reports">Reportes</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="/transactions">Transacciones</a>
+        </li> -->
+      </ul>
+      <!-- Left elements -->
+
+      <!-- Search form -->
+      <!-- <form class="input-group w-auto my-auto d-none d-sm-flex">
+        <input type="text" class="form-control rounded" placeholder="Buscar" />
+        <button class="btn btn-primary input-group-append" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </form> -->
+
+      <!-- Loged user -->
+      <ul class="navbar-nav flex-row" *ngIf="usuario">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-sm-flex align-items-sm-center icontext" id="dropdownuser" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src={{usuario.avatar}} class="icon icon-xs rounded-circle">
+            <strong class="d-none d-sm-block ms-1">{{usuario.nick}}</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end bg-accent2" aria-labelledby="dropdownuser">
+            <li><a class="dropdown-item" [routerLink]="['/profile']" routerLinkActive="router-link-active">Perfil</a>
+            </li>
+            <li><a class="dropdown-item" [routerLink]="['/products']" routerLinkActive="router-link-active">Mis
+                productos</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/reports']" routerLinkActive="router-link-active">Mis
+                reportes</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" [routerLink]="['/logout']" routerLinkActive="router-link-active">Cerrar
+                sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Loged user -->
+
+      <!-- guest user -->
+      <ul class="navbar-nav flex-row" *ngIf="!usuario">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-sm-flex align-items-sm-center" id="dropdownGuest" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user-circle"></i>
+            <strong class="d-none d-sm-block ms-1">Invitado</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end bg-accent2" aria-labelledby="dropdownGuest">
+            <li><a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active">Iniciar
+                sesión</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/register']"
+                routerLinkActive="router-link-active">Registrarse</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- guest user -->
+    </div>
+  </nav>
+  <!-- Navbar -->
+</header>
