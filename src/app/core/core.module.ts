@@ -6,9 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { HeaderComponent } from './header/header.component';
-import { ShellComponent } from './shell/shell.component';
-import { FooterComponent } from './footer/footer.component';
 import { ToastrModule } from 'ngx-toastr';
 
 

@@ -22,5 +22,6 @@ import { EditComponent } from './edit/edit.component';
     AuthRoutingModule,
     SharedModule,
   ],
+  exports:[AuthRoutingModule]
 })
 export class AuthModule { }

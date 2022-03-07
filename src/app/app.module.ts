@@ -1,13 +1,13 @@
-import { AuthModule } from './auth/auth.module';
+import { FeaturesModule } from '@features/features.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from '@core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '@core/header/header.component';
-import { ShellComponent } from '@core/shell/shell.component';
-import { FooterComponent } from '@core/footer/footer.component';
+import { HeaderComponent } from '@layouts/header/header.component';
+import { ShellComponent } from '@layouts/shell/shell.component';
+import { FooterComponent } from '@layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { FooterComponent } from '@core/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    AuthModule,
+    FeaturesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
