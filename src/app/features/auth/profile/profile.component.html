@@ -11,7 +11,7 @@
   <!-- <div class="container"> -->
 
     <div class="container row">
-      <aside class="col-md-3">
+      <!-- <aside class="col-md-3">
         <ul class="list-group">
           <a class="list-group-item active" href="#"> Account overview </a>
           <a class="list-group-item" href="#"> My Orders </a>
@@ -21,8 +21,8 @@
           <a class="list-group-item" href="#"> My Selling Items </a>
           <a class="list-group-item" href="#"> Received orders </a>
         </ul>
-      </aside> <!-- col.// -->
-      <main class="col-md-9">
+      </aside>  -->
+      <main class="col-10">
 
         <div class="card mb-3">
           <div class="card-body">
@@ -35,7 +35,7 @@
                 <strong> {{item?.nick}} </strong> <br>
               </div>
             </figure>
-            <a class="btn btn-info my-2 float-end" href="#">Editar</a>
+            <a class="btn btn-info my-2 float-end" [routerLink]="['/settings']">Editar</a>
             <hr>
             <dl class="row my-4 py-2">
               <dt class="col-sm-3 ">Nombre: </dt>
@@ -80,7 +80,11 @@
 
 
           </div> <!-- card-body .// -->
+
+
         </div> <!-- card.// -->
+
+        <!-- <app-products-list></app-products-list> -->
 
         <div class="card  mb-3">
           <div class="card-body">
