@@ -55,7 +55,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register(form: Signup) {
-    console.log("register");
 
     this.spinner.show();
     this.apiS.post("signup",form).subscribe({
