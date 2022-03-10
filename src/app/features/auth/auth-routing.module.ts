@@ -7,11 +7,35 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'users', component: ListComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'settings', component: EditComponent },
+  { path: '', component: ProfileComponent,
+  children: [
+    {
+      path: 'register',
+      component: RegisterComponent
+    },
+    {
+      path: 'login',
+      component: LoginComponent
+    },
+    {
+      path: 'users',
+      component: ListComponent
+    },
+    // {
+    //   path: 'profile',
+    //   component: ProfileComponent
+    // },
+    {
+      path: 'settings',
+      component: EditComponent
+    },
+  ]}
+  // ,login
+  // { path: '/register', component: RegisterComponent },
+  // { path: '/login', component: LoginComponent },
+  // { path: '/users', component: ListComponent },
+  // { path: '/profile', component: ProfileComponent },
+  // { path: '/settings', component: EditComponent },
 
 ];
 

@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.get()
+    console.log(this.item);
   }
 
   // TODO: añadir reviews y links
@@ -31,7 +32,6 @@ export class ProfileComponent implements OnInit {
     this.apiS.get('me').subscribe({
       next: (data) => {
         this.item = data as Auth;
-        console.log(this.item);
 
       },
       error: (err) => {

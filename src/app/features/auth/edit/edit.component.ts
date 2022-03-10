@@ -55,6 +55,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
         this.get()
+        console.log(this.item)
   }
 
   get form()  //para llamar a los componentes desde el html mas facil
@@ -68,7 +69,6 @@ export class EditComponent implements OnInit {
     this.apiS.get('me').subscribe({
       next: (data) => {
         this.item = data as Auth;
-        console.log(this.item);
 
       },
       error: (err) => {
