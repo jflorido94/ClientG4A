@@ -4,7 +4,6 @@ import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -22,7 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
       closeButton: true,
       progressBar: true,
     }),                      // ToastrModule added
-    NgxSpinnerModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

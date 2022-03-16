@@ -7,7 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
-  { path: '', component: ProfileComponent,
+  { path: '', component: RegisterComponent,
   children: [
     {
       path: 'register',
@@ -21,10 +21,10 @@ const routes: Routes = [
       path: 'users',
       component: ListComponent
     },
-    // {
-    //   path: 'profile',
-    //   component: ProfileComponent
-    // },
+    {
+      path: 'profile',
+      component: ProfileComponent
+    },
     {
       path: 'settings',
       component: EditComponent
