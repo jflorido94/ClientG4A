@@ -38,7 +38,7 @@
             <strong class="d-none d-sm-block ms-1">{{usuario.nick}}</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end bg-accent2" aria-labelledby="dropdownuser">
-            <li><a class="dropdown-item" [routerLink]="['/profile']" routerLinkActive="router-link-active">Perfil</a>
+            <li><a class="dropdown-item" [routerLink]="['/auth/profile']" routerLinkActive="router-link-active">Perfil</a>
             </li>
             <li><a class="dropdown-item" [routerLink]="['/products']" routerLinkActive="router-link-active">Mis
                 productos</a></li>
@@ -47,7 +47,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" [routerLink]="['/logout']" routerLinkActive="router-link-active">Cerrar
+            <li><a class="dropdown-item" [routerLink]="['/auth/logout']" routerLinkActive="router-link-active">Cerrar
                 sesión</a></li>
           </ul>
         </li>
@@ -63,9 +63,9 @@
             <strong class="d-none d-sm-block ms-1">Invitado</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end bg-accent2" aria-labelledby="dropdownGuest">
-            <li><a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active">Iniciar
+            <li><a class="dropdown-item" [routerLink]="['/auth/login']" routerLinkActive="router-link-active">Iniciar
                 sesión</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/register']"
+            <li><a class="dropdown-item" [routerLink]="['/auth/register']"
                 routerLinkActive="router-link-active">Registrarse</a></li>
           </ul>
         </li>
