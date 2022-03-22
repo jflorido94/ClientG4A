@@ -71,7 +71,7 @@ export class RegisterComponent implements OnInit {
       complete: () => {
         this.spinner.hide();
         window.location.reload();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
         // TODO: mostrar mensaje bien
       },
     });
