@@ -47,7 +47,7 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" [routerLink]="['/auth/logout']" routerLinkActive="router-link-active">Cerrar
+            <li><a class="dropdown-item" (click)="logout()" [routerLink]="['/']" routerLinkActive="router-link-active">Cerrar
                 sesión</a></li>
           </ul>
         </li>

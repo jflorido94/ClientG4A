@@ -48,8 +48,6 @@ export class LoginComponent implements OnInit {
       next: (resp) => {
         let user: RespLogin = resp as RespLogin;
         localStorage.setItem("token", user.access_token)
-        this.toastr.info("login")
-        console.log(resp);
 
       },
       error: (err) => {
@@ -59,12 +57,11 @@ export class LoginComponent implements OnInit {
         }else{
           this.toastr.error(err.statusText)
         }
-        console.log(err);
       },
       complete: () => {
         this.spinner.hide();
         window.location.reload()
-        this.router.navigate([''])
+        this.router.navigate(['/auth/profile'])
         this.toastr.success('Inicio de sesion correcto')
 
         // TODO: mostrar mensaje y actualizar header bien
