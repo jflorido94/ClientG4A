@@ -22,23 +22,8 @@ export class ProfileComponent implements OnInit {
     private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
-    this.spinner.show();
-    this.apiS.get('me').subscribe({
-      next: (data) => {
-        this.item = data as Auth;
-        console.log(this.item)
-
-
-      },
-      error: (err) => {
-        console.log(err);
-        this.spinner.hide();
-        this.toastr.error(err.statusText,'Error!');
-      },
-      complete: () =>{
-        this.spinner.hide();
-      },
-    });
+    window.location.reload()
+    this.get()
   }
 
   // TODO: añadir reviews y links
