@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 
@@ -8,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditComponent } from './edit/edit.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { EditComponent } from './edit/edit.component';
     EditComponent,
   ],
   imports: [
+    CommonModule,
     AuthRoutingModule,
     SharedModule,
   ],

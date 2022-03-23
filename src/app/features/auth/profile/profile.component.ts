@@ -12,7 +12,7 @@ import { Auth } from '../interfaces/auth';
 })
 export class ProfileComponent implements OnInit {
 
-  item!: Auth;
+  public item!: Auth;
 
   constructor(
     private apiS: ApiService,
@@ -22,8 +22,23 @@ export class ProfileComponent implements OnInit {
     private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
-    this.get()
-    console.log(this.item);
+    this.spinner.show();
+    this.apiS.get('me').subscribe({
+      next: (data) => {
+        this.item = data as Auth;
+        console.log(this.item)
+
+
+      },
+      error: (err) => {
+        console.log(err);
+        this.spinner.hide();
+        this.toastr.error(err.statusText,'Error!');
+      },
+      complete: () =>{
+        this.spinner.hide();
+      },
+    });
   }
 
   // TODO: añadir reviews y links
@@ -32,6 +47,8 @@ export class ProfileComponent implements OnInit {
     this.apiS.get('me').subscribe({
       next: (data) => {
         this.item = data as Auth;
+        console.log(this.item)
+
 
       },
       error: (err) => {

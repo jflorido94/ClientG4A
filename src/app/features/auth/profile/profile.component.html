@@ -1,30 +1,9 @@
-<!-- <div class="container-fluid p-3 bg-light "> -->
-<app-spinner></app-spinner>
+<app-page title="Mi perfil">
 
-<section class="section-pagetop">
-  <div class="container">
-    <h2 class="title-page">Mi perfil</h2>
-  </div> <!-- container //  -->
-</section>
-<!-- <div class="container"> -->
-
-<div class="container row">
-  <!-- <aside class="col-md-3">
-        <ul class="list-group">
-          <a class="list-group-item active" href="#"> Account overview </a>
-          <a class="list-group-item" href="#"> My Orders </a>
-          <a class="list-group-item" href="#"> My wishlist </a>
-          <a class="list-group-item" href="#"> Return and refunds </a>
-          <a class="list-group-item" href="#">Settings </a>
-          <a class="list-group-item" href="#"> My Selling Items </a>
-          <a class="list-group-item" href="#"> Received orders </a>
-        </ul>
-      </aside>  -->
   <main class="col-10">
 
     <div class="card mb-3">
-      <div class="card-body">
-
+      <div class="card-header">
         <figure class="icontext">
           <div class="icon">
             <img class="rounded-circle img-sm border" src="{{item?.avatar}}">
@@ -33,9 +12,11 @@
             <strong> {{item?.nick}} </strong> <br>
           </div>
         </figure>
-        <a class="btn btn-info my-2 float-end" [routerLink]="['/settings']"
+        <a class="btn btn-info my-2 float-end" [routerLink]="['/auth/settings']"
           routerLinkActive="router-link-active">Editar</a>
-        <hr>
+      </div>
+
+      <div class="card-body">
         <dl class="row my-4 py-2">
           <dt class="col-sm-3 ">Nombre: </dt>
           <dd class="col-sm-9">{{item?.name}} {{item?.surnames}}</dd>
@@ -111,7 +92,8 @@
     <!-- <app-reviews-list></app-reviews-list> -->
 
   </main> <!-- col.// -->
-</div>
 
+
+</app-page>
 <!-- </div> container .//  -->
 <!-- </div> -->

@@ -14,7 +14,7 @@ import { FooterComponent } from '@layouts/footer/footer.component';
     AppComponent,
     HeaderComponent,
     ShellComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

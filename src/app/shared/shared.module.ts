@@ -5,13 +5,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardFormComponent } from './components/card-form/card-form.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { PageComponent } from './components/page/page.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
 @NgModule({
   declarations: [
     CardFormComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PageComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ReactiveFormsModule,
     RouterModule,
     CardFormComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PageComponent,
+    ModalComponent
   ]
 })
 export class SharedModule { }

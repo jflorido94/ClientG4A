@@ -18,7 +18,7 @@
           <label>Nombre</label>
           <input class="form-control text-center" placeholder="Nombre" type="text" formControlName="name"
             [ngClass]="{ 'is-invalid': form['name'].errors&&form['name'].dirty}">
-          <div *ngIf="form['name'].errors" class="invalid-feedback">
+          <div *ngIf="form['name'].errors" class="invalid-tooltip">
             <div *ngIf="form['name'].errors['required']">Nombre requerido</div>
             <div *ngIf="form['name'].errors['name']">Nombre no valido</div>
           </div>
@@ -29,7 +29,7 @@
           <label>Apellidos</label>
           <input class="form-control text-center" placeholder="Apellidos" type="text" formControlName="surnames"
             [ngClass]="{ 'is-invalid': form['surnames'].errors&&form['surnames'].dirty}">
-          <div *ngIf="form['surnames'].errors" class="invalid-feedback">
+          <div *ngIf="form['surnames'].errors" class="invalid-tooltip">
             <div *ngIf="form['surnames'].errors['required']">Apellidos requerido</div>
             <div *ngIf="form['surnames'].errors['surnames']">Apellidos no valido</div>
           </div>
@@ -43,7 +43,7 @@
           <label>Nick</label>
           <input class="form-control text-center" placeholder="Nick" type="text" formControlName="nick"
             [ngClass]="{ 'is-invalid': form['nick'].errors&&form['nick'].dirty}">
-          <div *ngIf="form['nick'].errors" class="invalid-feedback">
+          <div *ngIf="form['nick'].errors" class="invalid-tooltip">
             <div *ngIf="form['nick'].errors['required']">Nick requerido</div>
             <div *ngIf="form['nick'].errors['minlength']">El nick es de minimo
               {{form['nick'].errors['minlength'].requiredLength}} caracteres</div>
@@ -55,7 +55,7 @@
           <label>DNI</label>
           <input class="form-control text-center" placeholder="12345678-A" type="text" formControlName="dni"
             [ngClass]="{ 'is-invalid': form['dni'].errors&&form['dni'].dirty}">
-          <div *ngIf="form['dni'].errors" class="invalid-feedback">
+          <div *ngIf="form['dni'].errors" class="invalid-tooltip">
             <div *ngIf="form['dni'].errors['required']">DNI requerido</div>
             <div *ngIf="form['dni'].errors['dni']">DNI no valido</div>
           </div>
@@ -67,7 +67,7 @@
         <label>Email</label>
         <input class="form-control text-center" placeholder="email@g4a.com" type="email" formControlName="email"
           [ngClass]="{ 'is-invalid': form['email'].errors&&form['email'].dirty}">
-        <div *ngIf="form['email'].errors" class="invalid-feedback">
+        <div *ngIf="form['email'].errors" class="invalid-tooltip">
           <div *ngIf="form['email'].errors['required']">email requerido</div>
           <div *ngIf="form['email'].errors['email']">email no valido</div>
         </div>
@@ -80,7 +80,7 @@
           <label>Contraseña</label>
           <input class="form-control text-center" placeholder="******" type="password" formControlName="password"
             [ngClass]="{ 'is-invalid': form['password'].errors&&form['password'].dirty}">
-          <div *ngIf="form['password'].errors" class="invalid-feedback">
+          <div *ngIf="form['password'].errors" class="invalid-tooltip">
             <div *ngIf="form['password'].errors['required']">Contraseña requerida</div>
             <div *ngIf="form['password'].errors['minlength']">La contraseña es de minimo
               {{form['password'].errors['minlength'].requiredLength}} caracteres</div>
@@ -93,7 +93,7 @@
           <input class="form-control text-center" placeholder="******" type="password"
             formControlName="password_confirmation"
             [ngClass]="{ 'is-invalid': form['password_confirmation'].errors&&form['password_confirmation'].dirty}">
-          <div *ngIf="form['password_confirmation'].errors" class="invalid-feedback">
+          <div *ngIf="form['password_confirmation'].errors" class="invalid-tooltip">
             <div *ngIf="form['password_confirmation'].errors['required']">Contraseña requerida</div>
             <div *ngIf="form['password_confirmation'].errors['minlength']">La contraseña es de minimo
               {{form['password_confirmation'].errors['minlength'].requiredLength}} caracteres</div>
