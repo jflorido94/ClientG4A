@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit {
     private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
-    window.location.reload()
     this.get()
   }
 
@@ -32,12 +31,10 @@ export class ProfileComponent implements OnInit {
     this.apiS.get('me').subscribe({
       next: (data) => {
         this.item = data as Auth;
-        console.log(this.item)
-
+        window.location.reload()
 
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
         this.toastr.error(err.statusText,'Error!');
       },
