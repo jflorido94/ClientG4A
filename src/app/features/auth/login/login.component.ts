@@ -60,9 +60,9 @@ export class LoginComponent implements OnInit {
       },
       complete: () => {
         this.spinner.hide();
-        window.location.reload()
         this.router.navigate(['/auth/profile'])
         this.toastr.success('Inicio de sesion correcto')
+        window.location.reload()
 
         // TODO: mostrar mensaje y actualizar header bien
       },
