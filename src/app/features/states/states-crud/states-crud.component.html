@@ -1,0 +1,65 @@
+<app-spinner></app-spinner>
+<app-page titulo="Estados de productos">
+  <div class="card">
+    <form class="card-body" [formGroup]="state" (ngSubmit)="set(state.value)">
+
+      <input type="hidden" name="id" formControlName="id">
+
+      <!-- Name -->
+      <div class="form-group mb-3 form-floating">
+        <input class="form-control text-center" type="text" formControlName="name"
+          [ngClass]="{ 'is-invalid': form['name'].errors&&form['name'].dirty}">
+        <label>Nombre</label>
+        <div *ngIf="form['name'].errors" class="invalid-tooltip">
+          <div *ngIf="form['name'].errors['required']">Nombre requerido</div>
+          <div *ngIf="form['name'].errors['maxlength']">El nombre es de maximo
+            {{form['name'].errors['maxlength'].requiredLength}} caracteres</div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group mb-3 form-floating">
+        <textarea class="form-control text-center" type="text" formControlName="description"
+          [ngClass]="{ 'is-invalid': form['description'].errors&&form['description'].dirty}"></textarea>
+        <label>Description</label>
+        <div *ngIf="form['description'].errors" class="invalid-tooltip">
+          <div *ngIf="form['description'].errors['required']">description requerido</div>
+          <div *ngIf="form['description'].errors['description']">description no valido</div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="d-flex justify-content-around">
+        <button type="submit" [disabled]="state.invalid" class="btn btn-success col-5"> Guardar </button>
+        <button type="reset" (click)="reset()" class="btn btn-warning col-5"> Cancelar </button>
+      </div>
+
+
+    </form>
+    <div class="card-footer p-0">
+      <table class="table table-striped table-hover m-0">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cndtn of list">
+            <td (click)="get(cndtn.id)">{{cndtn.name}}</td>
+            <td (click)="get(cndtn.id)">{{cndtn.description}}</td>
+            <td>
+              <a title="Borrar" (click)="get(cndtn.id)">
+                <i class="mx-2 fa fa-pen text-primary"></i>
+              </a>
+              <a title="Borrar" (click)="drop(cndtn.id)">
+                <i class="mx-2 fa fa-trash text-danger"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

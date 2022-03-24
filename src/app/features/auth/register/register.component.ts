@@ -13,7 +13,6 @@ import { Signup } from '../interfaces/auth';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-// TODO: añadir avatar
 export class RegisterComponent implements OnInit {
   registro = new FormGroup({
     name: new FormControl('', [

@@ -15,9 +15,26 @@ const routes: Routes = [
       import('@features/auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'conditions',
+    loadChildren: () =>
+      import('@features/condition/condition.module').then(
+        (m) => m.ConditionModule
+      ),
+  },
+  {
+    path: 'tags',
+    loadChildren: () =>
+      import('@features/tags/tags.module').then((m) => m.TagsModule),
+  },
+  {
+    path: 'states',
+    loadChildren: () =>
+      import('@features/states/states.module').then((m) => m.StatesModule),
+  },
+  {
     path: '**',
-    redirectTo: 'products'
-  }
+    redirectTo: 'products',
+  },
 ];
 
 @NgModule({

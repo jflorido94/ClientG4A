@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit {
     this.get()
   }
 
-  // TODO: añadir reviews y links
   get() {
     this.spinner.show();
     this.apiS.get('me').subscribe({

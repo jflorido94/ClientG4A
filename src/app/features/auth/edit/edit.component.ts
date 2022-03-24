@@ -17,8 +17,6 @@ export class EditComponent implements OnInit {
   user = new FormGroup({
     name: new FormControl('', [Validators.required]),
     surnames: new FormControl('', [Validators.required]),
-    nick: new FormControl('', [Validators.minLength(8), Validators.required]),
-    dni: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     avatar: new FormControl('', []),
     password: new FormControl('', [Validators.required]),
@@ -49,7 +47,6 @@ export class EditComponent implements OnInit {
     return this.user.controls;
   }
 
-  // TODO: Imagen y copiar de register
   get() {
     this.spinner.show();
     this.apiS.get('me').subscribe({
@@ -83,7 +80,6 @@ export class EditComponent implements OnInit {
     this.apiS.post('users/' + sessionStorage.getItem('id'), form).subscribe({
       next: (resp) => {
         this.spinner.hide();
-
         this.toastr.success('Usuario editado correctamente');
       },
       error: (err) => {
@@ -98,7 +94,6 @@ export class EditComponent implements OnInit {
         this.spinner.hide();
         // window.location.reload();
         this.router.navigate(['/profile']);
-        // TODO: mostrar mensaje bien
       },
     });
   }
