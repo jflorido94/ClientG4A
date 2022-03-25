@@ -1,0 +1,39 @@
+<div class="card h-100 shadow-sm" [routerLink]="[product.id]">
+  <div class="card-header d-flex justify-content-between">
+    <img class="card-img" src="{{product.image}}">
+    <div class="top-left shadow-sm" [ngStyle]="{'background-color': product.condition.colour}"
+      title="{{product.condition['description']}}">{{product.condition['name']}}</div>
+    <!-- TODO: rating component shared -->
+    <ul class="rating-stars top-right float-end">
+      <li style="width:75%" class="stars-active">
+        <img src="/assets/img/stars-active.svg" alt="">
+      </li>
+      <li>
+        <img src="/assets/img/starts-disable.svg" alt="">
+      </li>
+    </ul>
+    <!-- Rating -->
+    <div class="clearfix align-self-end">
+      <app-tag-badge *ngFor="let badge of product.tags" [tag]=badge></app-tag-badge>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{product.title}}</h5>
+    <!-- <div *ngIf="loged==product.owner['id']">
+    <div class="text-center my-4"> <a (click)="editar(product.id)" class="btn btn-info">Editar</a> </div>
+  </div>
+  <div *ngIf="loged!=product.owner['id']">
+    <div class="text-center my-4"> <a (click)="comprar(product.id)" class="btn btn-warning">Comprar</a> </div>
+  </div> -->
+  </div>
+  <div class="card-footer">
+
+    <div class="clearfix mb-1 rating-wrap">
+        <img class="icon icon-xs rounded-circle" src="{{product.owner['avatar']}}">
+        <span class="small">{{product.owner['nick']}}</span>
+
+      <!-- TODO: precio -->
+
+    </div>
+  </div>
+</div>

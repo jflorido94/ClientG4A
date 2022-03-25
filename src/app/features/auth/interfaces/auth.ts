@@ -32,3 +32,9 @@ export interface Auth {
   wallet: any;
   products:any;
 }
+
+export interface AuthShort {
+  id?: number,
+  nick: string,
+  avatar: string,
+}

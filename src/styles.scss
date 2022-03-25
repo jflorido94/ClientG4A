@@ -24,3 +24,7 @@ header{
 footer{
   min-height: 10vh;
 }
+
+.top-left:hover .top-right:hover .bottom-left:hover .bottom-right:hover{
+  cursor: pointer;
+}

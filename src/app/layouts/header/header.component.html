@@ -6,19 +6,10 @@
 
       <div class="d-flex">
         <!-- Brand -->
-        <a class="navbar-brand me-2 mb-1 d-flex align-items-center">
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" [routerLink]="['']" routerLinkActive="router-link-active" >
           <img src="assets/img/logo1.png" height="40" />
         </a>
       </div>
-
-      <ul class="navbar-nav ml-auto mr-sm-2 mt-2 mt-lg-0">
-        <li class="nav-item mr-3">
-          <a class="nav-link"  [routerLink]="['/products']" routerLinkActive="router-link-active">Productos</a>
-        </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link" [routerLink]="['/reviews']" routerLinkActive="router-link-active">Reviews</a>
-        </li>
-      </ul>
       <!-- Left elements -->
 
       <!-- Search form -->
@@ -40,10 +31,8 @@
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end bg-accent2" aria-labelledby="dropdownuser">
             <li><a class="dropdown-item" [routerLink]="['/auth/profile']" routerLinkActive="router-link-active">Perfil</a>
             </li>
-            <li><a class="dropdown-item" [routerLink]="['/products']" routerLinkActive="router-link-active">Mis
+            <li><a class="dropdown-item" [routerLink]="['/products/manage']" routerLinkActive="router-link-active">Mis
                 productos</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/reports']" routerLinkActive="router-link-active">Mis
-                reportes</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
