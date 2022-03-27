@@ -1,3 +1,6 @@
+import { Product } from '@features/products/interfaces/product';
+import { Review } from '@features/reviews/interfaces/review';
+import { Transaction } from '@features/transactions/interfaces/transaction';
 export interface Signup {
   name: string;
   surnames: string;
@@ -31,6 +34,13 @@ export interface Auth {
   erased: boolean;
   wallet: any;
   products:any;
+  reviews:any;
+  shoppings:any;
+  votes:any;
+  average:number;
+  sales: any;
+
+  is_admin:boolean
 }
 
 export interface AuthShort {

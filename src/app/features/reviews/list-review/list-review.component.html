@@ -1,0 +1,9 @@
+<app-spinner></app-spinner>
+<app-page titulo="Valoraciones como vendedor">
+  <div class="row row-cols-1 g-3">
+
+    <app-review *ngFor="let item of list" [review]=item ></app-review>
+
+  </div>
+</app-page>
+

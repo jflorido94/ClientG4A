@@ -64,9 +64,9 @@
             <div *ngIf="form['price'].errors" class="invalid-tooltip">
               <div *ngIf="form['price'].errors['required']">Precio requerido</div>
               <div *ngIf="form['price'].errors['min']">El precio minimo es
-                {{form['price'].errors['min'].min}} €</div>
+                {{form['price'].errors['min'].min}} cdts</div>
               <div *ngIf="form['price'].errors['max']">El precio maximo es
-                {{form['price'].errors['max'].max}} €</div>
+                {{form['price'].errors['max'].max}} cdts</div>
             </div>
           </div>
 
@@ -109,7 +109,7 @@
           <tr *ngFor="let prdct of list">
             <td (click)="get(prdct.id)">{{prdct.title}}</td>
             <td (click)="get(prdct.id)">{{prdct.description}}</td>
-            <td (click)="get(prdct.id)">{{prdct.price}} €</td>
+            <td (click)="get(prdct.id)">{{prdct.price}} cdts</td>
             <td (click)="get(prdct.id)">{{prdct.condition.name}}</td>
             <!-- <td (click)="get(prdct.id)"><span *ngFor="let tg of prdct.tags">{{tg.name}}, </span></td> -->
             <td>

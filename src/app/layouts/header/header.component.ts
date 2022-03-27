@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
         sessionStorage.setItem('id', this.usuario.id);
       },
       error: (err) => {
-        console.error(err);
         if (localStorage.getItem('token') && err.status == 401) {
           sessionStorage.removeItem('id');
           localStorage.removeItem('token');
@@ -46,7 +45,6 @@ export class HeaderComponent implements OnInit {
         window.location.reload();
       },
       error: (err) => {
-        console.error(err);
         if (localStorage.getItem('token') && err.status == 401) {
           sessionStorage.removeItem('id');
           localStorage.removeItem('token');

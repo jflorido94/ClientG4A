@@ -12,6 +12,17 @@
       </div>
       <!-- Left elements -->
 
+      <div class="collapse navbar-collapse show" id="navbarBasic">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="usuario?.is_admin" [routerLink]="['/conditions']" routerLinkActive="router-link-active" >Estado de productos</a>
+          </li>
+        </ul>
+      </div>
+
       <!-- Search form -->
       <!-- <form class="input-group w-auto my-auto d-none d-sm-flex">
         <input type="text" class="form-control rounded" placeholder="Buscar" />
@@ -33,6 +44,9 @@
             </li>
             <li><a class="dropdown-item" [routerLink]="['/products/manage']" routerLinkActive="router-link-active">Mis
                 productos</a></li>
+            <li>
+            <li><a class="dropdown-item" [routerLink]="['/transactions']" routerLinkActive="router-link-active">Mis
+                compras</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>

@@ -1,3 +1,5 @@
+import { ProductsModule } from './../products/products.module';
+import { ListProductsComponent } from './../products/list-products/list-products.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
@@ -24,6 +26,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     AuthRoutingModule,
     SharedModule,
+    ProductsModule
   ],
   exports:[AuthRoutingModule]
 })

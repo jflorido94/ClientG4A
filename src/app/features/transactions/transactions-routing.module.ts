@@ -1,12 +1,12 @@
-import { TagsCrudComponent } from './tags-crud/tags-crud.component';
+import { ListTransactionsComponent } from './list-transactions/list-transactions.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+  path: '',
     children: [
-      { path: '', component: TagsCrudComponent },
+      { path: '', component: ListTransactionsComponent },
       { path: '**', redirectTo: '' },
     ],
   },
@@ -14,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class TagsRoutingModule {}
+export class TransactionsRoutingModule { }

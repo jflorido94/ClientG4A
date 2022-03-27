@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagBadgeComponent } from './tag-badge.component';
+import { ListReviewComponent } from './list-review.component';
 
-describe('TagBadgeComponent', () => {
-  let component: TagBadgeComponent;
-  let fixture: ComponentFixture<TagBadgeComponent>;
+describe('ListReviewComponent', () => {
+  let component: ListReviewComponent;
+  let fixture: ComponentFixture<ListReviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TagBadgeComponent ]
+      declarations: [ ListReviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TagBadgeComponent);
+    fixture = TestBed.createComponent(ListReviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

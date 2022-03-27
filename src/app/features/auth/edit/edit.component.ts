@@ -39,7 +39,6 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.get();
-    console.log(this.item);
   }
 
   get form() {
@@ -54,9 +53,8 @@ export class EditComponent implements OnInit {
         this.item = data as Auth;
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.user.patchValue({
@@ -73,7 +71,6 @@ export class EditComponent implements OnInit {
 
   set(form: Auth) {
     this.spinner.show();
-    console.log(form);
 
     form.avatar = "data:image/png;base64,"+this.archivo!.base64textString;
 
@@ -83,7 +80,6 @@ export class EditComponent implements OnInit {
         this.toastr.success('Usuario editado correctamente');
       },
       error: (err) => {
-        console.error(err.error);
 
         this.spinner.hide();
         for (const key in err.error.errors) {

@@ -1,0 +1,32 @@
+<app-spinner></app-spinner>
+<app-page titulo="Mis compras">
+<div class="card">
+
+  <table class="table table-striped table-hover m-0">
+    <thead>
+      <tr>
+        <th>Producto</th>
+            <th>Vendedor</th>
+            <th>Precio</th>
+            <th>Comprador</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trans of list">
+            <td >{{trans.product.title}}</td>
+            <td >{{trans.seller.nick}}</td>
+            <td >{{trans.amount}} cdts</td>
+            <td >{{trans.buyer.nick}}</td>
+            <td >{{trans.created_at|date}}</td>
+            <td>
+              <a title="Valorar" (click)="review(trans.id)">
+                <i class="mx-2 fa fa-star text-primary"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</app-page>

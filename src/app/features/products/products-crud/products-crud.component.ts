@@ -1,4 +1,4 @@
-import { Tags } from './../../tags/interfaces/tags';
+
 import { Condition } from './../../condition/interfaces/condition';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
@@ -72,13 +72,11 @@ export class ProductsCrudComponent implements OnInit {
     this.apiS.get('manage').subscribe({
       next: (data) => {
         this.list = data as Product[];
-        console.log(this.list);
 
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.spinner.hide();
@@ -91,13 +89,11 @@ export class ProductsCrudComponent implements OnInit {
     this.apiS.get('conditions').subscribe({
       next: (data) => {
         this.condlist = data as Condition[];
-        console.log(this.condlist);
 
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.spinner.hide();
@@ -110,13 +106,11 @@ export class ProductsCrudComponent implements OnInit {
   //   this.apiS.get('tags').subscribe({
   //     next: (data) => {
   //       this.tagslist = data as Tags[];
-  //       console.log(this.tagslist);
 
   //     },
   //     error: (err) => {
-  //       console.log(err);
   //       this.spinner.hide();
-  //       this.toastr.error(err.statusText, 'Error!');
+  //       this.toastr.error(err.error.message, 'Error!');
   //     },
   //     complete: () => {
   //       this.spinner.hide();
@@ -139,9 +133,8 @@ export class ProductsCrudComponent implements OnInit {
 
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.product.patchValue({
@@ -178,8 +171,6 @@ export class ProductsCrudComponent implements OnInit {
         },
       });
     } else {
-      console.log(form);
-
       this.apiS.post('products/', form).subscribe({
         error: (err) => {
           this.spinner.hide();
@@ -218,8 +209,6 @@ export class ProductsCrudComponent implements OnInit {
   }
 
   reset() {
-    console.log('reset');
-
     this.product.reset;
     this.editar=false
   }

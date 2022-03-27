@@ -28,31 +28,37 @@
           <dd class="col-sm-9">{{item?.dni}}</dd>
 
           <dt class="col-sm-3 ">Saldo: </dt>
-          <dd class="col-sm-9">{{item?.wallet.amount}} €</dd>
+          <dd class="col-sm-9">{{item?.wallet.amount}} cdts</dd>
         </dl>
 
         <div class="card-group">
           <figure class="card bg">
             <div class="p-3">
-              <h5 class="card-title">38</h5>
+              <h5 class="card-title">{{item?.products.length}}</h5>
               <span>Productos</span>
             </div>
           </figure>
           <figure class="card bg">
             <div class="p-3">
-              <h5 class="card-title">5</h5>
+              <h5 class="card-title">{{item?.votes.length}}</h5>
               <span>Votos</span>
             </div>
           </figure>
           <figure class="card bg">
             <div class="p-3">
-              <h5 class="card-title">12</h5>
+              <h5 class="card-title">{{item?.average}}/10</h5>
+              <span>Valoracion</span>
+            </div>
+          </figure>
+          <figure class="card bg">
+            <div class="p-3">
+              <h5 class="card-title">{{item?.shoppings.count}}</h5>
               <span>Compras</span>
             </div>
           </figure>
           <figure class="card bg">
             <div class="p-3">
-              <h5 class="card-title">50</h5>
+              <h5 class="card-title">{{item?.sales.count}}</h5>
               <span>Ventas</span>
             </div>
           </figure>
@@ -64,27 +70,17 @@
 
     </div> <!-- card.// -->
 
-    <!-- <app-products-list></app-products-list> -->
-
     <div class="card  mb-3">
       <div class="card-body">
-        <h5 class="card-title mb-4">Mis últimos productos </h5>
+        <h5 class="card-title mb-4">Mis productos </h5>
 
-        <!-- <div class="row">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
 
-              <div *ngFor="let prod of item.products?.data" class="col-md-6">
-                <figure class="itemside  mb-3">
-                  <div class="aside"><img src="images/items/1.jpg" class="border img-sm"></div>
-                  <figcaption class="info">
-                    <time class="text-muted"><i class="fa fa-calendar-alt"></i> {{prod.created_at| date: 'dd-MM-yyyy'}}</time>
-                    <p class="py-1">{{prod.title}}</p>
-                    <span class="badge bg-accent3" title="{{prod.condition['info']}}">{{prod.condition['title']}}</span>
-                  </figcaption>
-                </figure>
-              </div>
-</div> -->
+          <app-product-card *ngFor="let prod of item?.products" [product]=prod></app-product-card>
+        </div>
 
-        <a href="#" class="btn btn-outline-primary"> See all orders </a>
+        <a [routerLink]="['/products/manage']" routerLinkActive="router-link-active"
+          class="btn btn-outline-primary m-3"> Gestionar productos </a>
       </div> <!-- card-body .// -->
     </div> <!-- card.// -->
 

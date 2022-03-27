@@ -51,9 +51,8 @@ export class ConditionCrudComponent implements OnInit {
         this.list = data as Condition[];
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.spinner.hide();
@@ -73,9 +72,8 @@ export class ConditionCrudComponent implements OnInit {
         this.item = data as Condition;
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
-        this.toastr.error(err.statusText, 'Error!');
+        this.toastr.error(err.error.message, 'Error!');
       },
       complete: () => {
         this.condition.patchValue({
@@ -145,8 +143,6 @@ export class ConditionCrudComponent implements OnInit {
   }
 
   reset() {
-    console.log('reset');
-
     this.condition.reset;
     this.editar=false
   }

@@ -33,11 +33,9 @@ export class ListProductsComponent implements OnInit {
     this.apiS.get('products').subscribe({
       next: (data) => {
         this.list = data as Product[];
-        console.log(this.list);
 
       },
       error: (err) => {
-        console.log(err);
         this.spinner.hide();
       },
       complete: () => {

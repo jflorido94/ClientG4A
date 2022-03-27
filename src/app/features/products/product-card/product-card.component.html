@@ -11,23 +11,27 @@
   </div>
   <div class="card-body">
     <h5 class="text-bold">{{product?.title}}</h5>
-    <!-- <div *ngIf="loged==product?.owner['id']">
-    <div class="text-center my-4"> <a (click)="editar(product?.id)" class="btn btn-info">Editar</a> </div>
-  </div>
-  <div *ngIf="loged!=product?.owner['id']">
-    <div class="text-center my-4"> <a (click)="comprar(product?.id)" class="btn btn-warning">Comprar</a> </div>
-  </div> -->
+
     <p class="text-muted">{{product?.description}}</p>
   </div>
+
+  <div *ngIf="loged==product?.owner['id']">
+    <div class="text-center my-4"> <a [routerLink]="['/products/manage']" routerLinkActive="router-link-active"  class="btn btn-info">Gestionar</a> </div>
+  </div>
+
+  <div *ngIf="product&&loged!=product?.owner.id">
+    <div class="text-center my-4"> <a (click)="comprar(product.id)" class="btn btn-warning">Comprar</a> </div>
+  </div>
+
   <div class="card-footer">
 
     <div class="mb-1 rating-wrap">
-      <img class="icon icon-xs rounded-circle" src="{{product?.owner['avatar']}}">
+      <img class="icon icon-xs rounded-circle" src="{{product?.owner.avatar}}">
       <span class="small">{{product?.owner['nick']}}</span>
 
       <!-- TODO: rating component shared -->
-      <ul class="rating-stars float-end">
-        <li style="width:75%" class="stars-active">
+      <ul *ngIf="product?.owner['votes']['average']" class="rating-stars float-end" title="{{product?.owner['votes']['average']}}/10">
+        <li [ngStyle]="{width: average(product?.owner['votes']['average'])+'%'}" class="stars-active">
           <img src="/assets/img/stars-active.svg" alt="">
         </li>
         <li>

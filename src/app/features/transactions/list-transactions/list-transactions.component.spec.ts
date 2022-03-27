@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagsCrudComponent } from './tags-crud.component';
+import { ListTransactionsComponent } from './list-transactions.component';
 
-describe('TagsCrudComponent', () => {
-  let component: TagsCrudComponent;
-  let fixture: ComponentFixture<TagsCrudComponent>;
+describe('ListTransactionsComponent', () => {
+  let component: ListTransactionsComponent;
+  let fixture: ComponentFixture<ListTransactionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TagsCrudComponent ]
+      declarations: [ ListTransactionsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TagsCrudComponent);
+    fixture = TestBed.createComponent(ListTransactionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -22,9 +22,9 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'tags',
+    path: 'transactions',
     loadChildren: () =>
-      import('@features/tags/tags.module').then((m) => m.TagsModule),
+      import('@features/transactions/transactions.module').then((m) => m.TransactionsModule),
   },
   {
     path: '**',
