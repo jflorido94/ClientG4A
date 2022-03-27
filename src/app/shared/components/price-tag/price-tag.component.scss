@@ -1,0 +1,27 @@
+@import "src/styles/_variable.scss";
+
+.price-tag {
+  background: $secondary;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.875rem;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 1rem;
+  padding: 0 0.666rem;
+  position: relative;
+  text-align: center;
+}
+.price-tag:before {
+  content: "";
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.price-tag:before {
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid $secondary;
+  border-top: 15px solid transparent;
+  left: -12px;
+}

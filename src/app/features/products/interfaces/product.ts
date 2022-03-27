@@ -11,6 +11,6 @@ export interface Product {
   erased: boolean,
   owner: AuthShort,
   condition: Condition,
-  tags: Tags[],
+  // tags: Tags[],
   created_at: string
 }

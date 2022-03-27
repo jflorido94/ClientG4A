@@ -1,3 +1,4 @@
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { TagsModule } from './../tags/tags.module';
 import { SharedModule } from '@shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
-    TagsModule
+    TagsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ]
 })
 export class ProductsModule { }

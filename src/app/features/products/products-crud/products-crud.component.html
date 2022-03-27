@@ -1,1 +1,128 @@
-<p>products-crud works!</p>
+<app-spinner></app-spinner>
+<app-page titulo="Gestion de productos">
+  <div class="card">
+    <div class="row row-cols-1 row-cols-md-2 card-body">
+      <app-product-card title="Vista actual" [product]="item"></app-product-card>
+      <form [formGroup]="product" (ngSubmit)="set(product.value)">
+
+        <input type="hidden" name="id" formControlName="id">
+
+        <!-- Name -->
+        <div class="form-group mb-3 form-floating">
+          <input class="form-control text-center" type="text" formControlName="title"
+            [ngClass]="{ 'is-invalid': form['title'].errors&&form['title'].dirty}">
+          <label>Titulo</label>
+          <div *ngIf="form['title'].errors" class="invalid-tooltip">
+            <div *ngIf="form['title'].errors['required']">Titulo requerido</div>
+            <div *ngIf="form['title'].errors['maxlength']">El titulo es de maximo
+              {{form['title'].errors['maxlength'].requiredLength}} caracteres</div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group mb-3 form-floating">
+          <textarea class="form-control text-center" type="text" formControlName="description"
+            [ngClass]="{ 'is-invalid': form['description'].errors&&form['description'].dirty}"></textarea>
+          <label>Descripcion</label>
+          <div *ngIf="form['description'].errors" class="invalid-tooltip">
+            <div *ngIf="form['description'].errors['required']">Descripcion requerido</div>
+            <div *ngIf="form['description'].errors['description']">Descripcion no valido</div>
+          </div>
+        </div>
+
+        <!-- Image -->
+
+        <div class="form-group mb-3 row ">
+          <label class="col-sm-3 col-form-label">Imagen </label>
+          <div class="col-sm-9">
+            <input class="form-control " type="file" (change)="seleccionarArchivo($event)" accept="image/*"
+              formControlName="image" [ngClass]="{ 'is-invalid': form['image'].errors&&form['image'].dirty}">
+            <div *ngIf="form['image'].errors" class="invalid-tooltip">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <!-- Conditions -->
+          <div class="form-group mb-3 col-8">
+            <select class="form-select " formControlName="condition" required
+              [ngClass]="{ 'is-invalid': form['condition'].errors&&form['condition'].dirty}">
+              <option value="" disabled selected hidden>Estado del producto</option>
+              <option *ngFor="let cond of condlist" value={{cond.id}}>{{cond.name}}</option>
+            </select>
+            <div *ngIf="form['condition'].errors" class="invalid-tooltip">
+              <div *ngIf="form['condition'].errors['required']">condition requerido</div>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="form-group mb-3 form-floating col-4">
+            <input class="form-control text-center" type="number" step=".01" formControlName="price"
+              [ngClass]="{ 'is-invalid': form['price'].errors&&form['price'].dirty}">
+            <label>Precio</label>
+            <div *ngIf="form['price'].errors" class="invalid-tooltip">
+              <div *ngIf="form['price'].errors['required']">Precio requerido</div>
+              <div *ngIf="form['price'].errors['min']">El precio minimo es
+                {{form['price'].errors['min'].min}} €</div>
+              <div *ngIf="form['price'].errors['max']">El precio maximo es
+                {{form['price'].errors['max'].max}} €</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tags -->
+        <!-- <div class="form-group mb-3">
+          <ng-multiselect-dropdown class="my-2" [placeholder]="'Etiquetas'" [settings]="tagsSettings" [(ngModel)]="tags"
+            [data]="tagslist" [ngClass]="{ 'is-invalid': form['tags'].errors&&form['tags'].dirty}">
+          </ng-multiselect-dropdown>
+          <div *ngIf="form['tags'].errors" class="invalid-tooltip">
+            <div *ngIf="form['tags'].errors['required']">Estiquetas requeridas</div>
+            <div *ngIf="form['tags'].errors['maxlength']">Maximo
+              {{form['tags'].errors['maxlength'].requiredLength}} etiquetas</div>
+          </div> -->
+        <!-- </div> -->
+
+        <!-- Submit -->
+        <div class="d-flex justify-content-around">
+          <button type="submit" [disabled]="product.invalid" class="btn btn-success col-5"> Guardar </button>
+          <button type="reset" (click)="reset()" class="btn btn-warning col-5"> Cancelar </button>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="card-footer p-0">
+      <table class="table table-striped table-hover m-0">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <!-- <th>Etiquetas</th> -->
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prdct of list">
+            <td (click)="get(prdct.id)">{{prdct.title}}</td>
+            <td (click)="get(prdct.id)">{{prdct.description}}</td>
+            <td (click)="get(prdct.id)">{{prdct.price}} €</td>
+            <td (click)="get(prdct.id)">{{prdct.condition.name}}</td>
+            <!-- <td (click)="get(prdct.id)"><span *ngFor="let tg of prdct.tags">{{tg.name}}, </span></td> -->
+            <td>
+              <a title="Ver" (click)="get(prdct.id)">
+                <i class="mx-2 fa fa-pen text-primary"></i>
+              </a>
+              <a title="Borrar" (click)="drop(prdct.id)">
+                <i class="mx-2 fa fa-trash text-danger"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

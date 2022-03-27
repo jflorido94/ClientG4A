@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatesCrudComponent } from './states-crud.component';
+import { PriceTagComponent } from './price-tag.component';
 
-describe('StatesCrudComponent', () => {
-  let component: StatesCrudComponent;
-  let fixture: ComponentFixture<StatesCrudComponent>;
+describe('PriceTagComponent', () => {
+  let component: PriceTagComponent;
+  let fixture: ComponentFixture<PriceTagComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StatesCrudComponent ]
+      declarations: [ PriceTagComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StatesCrudComponent);
+    fixture = TestBed.createComponent(PriceTagComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

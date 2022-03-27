@@ -27,11 +27,6 @@ const routes: Routes = [
       import('@features/tags/tags.module').then((m) => m.TagsModule),
   },
   {
-    path: 'states',
-    loadChildren: () =>
-      import('@features/states/states.module').then((m) => m.StatesModule),
-  },
-  {
     path: '**',
     redirectTo: 'products',
   },
